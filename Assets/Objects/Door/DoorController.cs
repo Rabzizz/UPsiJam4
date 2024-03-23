@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class DoorController : MonoBehaviour, IActivable
 {
     [Header("Inputs")]
     public bool open;
@@ -38,4 +38,6 @@ public class DoorController : MonoBehaviour
         else
             LeanTween.moveY(gameObject, limitDown, 1f).setEase(LeanTweenType.easeOutSine);
     }
+
+    public void Activate() => SwitchDoor(open=false);
 }
