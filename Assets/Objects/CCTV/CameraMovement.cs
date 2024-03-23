@@ -14,6 +14,7 @@ public class CameraMovement : MonoBehaviour
     public float mouseSensitivity = 50f;
 
     [SerializeField] private Camera setupCamera;
+    [SerializeField] public Camera viewCamera;
 
     [SerializeField] private bool moving;
     [SerializeField] private Vector2 lookVector;
@@ -25,6 +26,11 @@ public class CameraMovement : MonoBehaviour
     // Start
     void Start()
     {
+        if (!GameManager.Instance.SetCCTVTarget(viewCamera))
+        {
+            Destroy(this);
+        }
+
         GetComponents<Camera>().ToList().ForEach(c => c.enabled = false);
 
         mainCamera = Camera.main;
@@ -37,6 +43,11 @@ public class CameraMovement : MonoBehaviour
         inputValidate.action.canceled += (_) => Validate();
 
         PlayerInputSystemController.Instance.SwitchToActionMap(ActionMap.CCTVCamera);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.ReTakeTarget(viewCamera);
     }
 
     // Update is called once per frame

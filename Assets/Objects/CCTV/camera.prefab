@@ -186,6 +186,7 @@ MonoBehaviour:
   inputValidate: {fileID: -2893033587061018259, guid: 9091f189a73817644bfe750b094d337f, type: 3}
   mouseSensitivity: 100
   setupCamera: {fileID: 2316942500947316188}
+  viewCamera: {fileID: 7387311090034035432}
   moving: 0
   lookVector: {x: 0, y: 0}
 --- !u!1 &5974818609321663464

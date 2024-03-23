@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState
@@ -18,6 +19,11 @@ public class GameManager : MonoBehaviour
     public event Action<GameState> onGameStateChanged;
     public GameObject enemyPrefab;
     public GameObject enemy;
+
+    public List<MeshRenderer> screens;
+    public List<Material> screenMaterials;
+    public List<RenderTexture> screenTexture;
+    public Material screenBaseMat;
 
     private void Awake()
     {
@@ -52,5 +58,32 @@ public class GameManager : MonoBehaviour
         onGameStateChanged?.Invoke(gameState);
     }
 
+    public void InitScreenMat(MeshRenderer meshRenderer)
+    {
+        meshRenderer.sharedMaterial = screenBaseMat;
+    }
+
+    public bool SetCCTVTarget(Camera camera)
+    {
+        if(screenTexture.Count > 0)
+        {
+            camera.targetTexture = screenTexture[0];
+            screenMaterials[0].mainTexture = camera.targetTexture;
+            screens[0].sharedMaterial = screenMaterials[0];
+            screenTexture.RemoveAt(0);
+            screens.RemoveAt(0);
+            screenMaterials.RemoveAt(0);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void ReTakeTarget(Camera camera)
+    {
+        screenTexture.Add(camera.targetTexture);
+    }
 
 }
