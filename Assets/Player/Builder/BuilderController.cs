@@ -14,21 +14,27 @@ public class BuilderController : MonoBehaviour
     public int selectedItem = 0;
 
     RaycastHit hit;
+    bool canBuild;
 
     void Start()
     {
-        InputBuild.action.performed += (_) => Build();
+        InputBuild.action.canceled += (_) => Build();
     }
 
     private void FixedUpdate()
     {
-        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, layerMasks);
+        canBuild = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, layerMasks);
     }
 
     public void Build()
     {
-        var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
-        
-        itemBuilded.transform.rotation = Quaternion.LookRotation(Vector3.Cross(hit.normal, Vector3.up).normalized);
+        if (canBuild)
+        {
+            var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
+
+            var direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
+
+            itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+        }
     }
 }
