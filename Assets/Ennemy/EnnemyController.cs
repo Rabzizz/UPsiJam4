@@ -9,13 +9,17 @@ public class EnnemyController : MonoBehaviour
 
     [Header("Inputs")]
     [SerializeField]
-    public Transform target;
+    private Transform target;
     public bool follow;
 
     // -- Tools -- //
     Vector3 lastDestination;
     NavMeshPathStatus agentStatus;
 
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Update()
     {

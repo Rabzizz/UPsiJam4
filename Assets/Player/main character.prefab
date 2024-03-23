@@ -170,7 +170,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -309,7 +309,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &8408409359453989544
 CapsuleCollider:
@@ -330,10 +330,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.21155643
-  m_Height: 1.8129959
+  m_Radius: 0.30982912
+  m_Height: 1.8884753
   m_Direction: 1
-  m_Center: {x: -0.005704403, y: 0.90003777, z: -0.010089755}
+  m_Center: {x: -0.0057044043, y: 0.8622835, z: 0.20827189}
 --- !u!114 &8456855771322433976
 MonoBehaviour:
   m_ObjectHideFlags: 0
