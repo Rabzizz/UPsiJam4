@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,10 @@ public class BuilderController : MonoBehaviour
     RaycastHit hit;
     bool canBuild;
 
+    public LayerMask layerMasksRemovable;
+    RaycastHit hitRemove;
+    bool canRemove;
+
     void Start()
     {
         InputBuild.action.canceled += (_) => Build();
@@ -24,10 +29,20 @@ public class BuilderController : MonoBehaviour
     private void FixedUpdate()
     {
         canBuild = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, layerMasks);
+        canRemove = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitRemove, maxDistance, layerMasksRemovable);
+
+        if (canRemove)
+            Debug.Log("Can Remove");
     }
 
     public void Build()
     {
+        if (canRemove)
+        {
+            Destroy(hitRemove.transform.gameObject);
+            return;
+        }
+
         if (canBuild)
         {
             var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
