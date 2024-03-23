@@ -36,4 +36,13 @@ public class PlayerMovement : MonoBehaviour
     {
         this.inputMove = inputMove;
     }
+
+    public void Click()
+    {
+        Debug.Log("click");
+    }
+    public void Enter()
+    {
+        Debug.Log("Enter");
+    }
 }
