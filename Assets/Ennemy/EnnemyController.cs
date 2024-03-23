@@ -32,6 +32,8 @@ public class EnnemyController : MonoBehaviour
         }
     }
 
+    // ------------- Navigation ------------- //
+
     public void SetDestinationToReach(Vector3 position)
     {
         agent.SetDestination(position);
@@ -50,5 +52,13 @@ public class EnnemyController : MonoBehaviour
     public void StopAgent()
     {
         agent.isStopped = true;
+        Debug.Log("Ennemy has no more path");
+    }
+
+    // ------------- Traps and other ------------- //
+
+    public void HitFromTrap()
+    {
+        Debug.Log("Ennemy is hit");
     }
 }
