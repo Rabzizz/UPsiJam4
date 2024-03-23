@@ -772,6 +772,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlayerCommand",
+            "id": "d816b68b-c74b-4200-b102-5e6b4e1bcb5a",
+            "actions": [
+                {
+                    "name": "Build",
+                    "type": "Value",
+                    "id": "d5810878-0a09-4c69-9ad2-d10591f7e032",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c397861c-2772-4323-83ba-31313e2576bc",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Build",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
