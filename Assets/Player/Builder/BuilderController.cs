@@ -32,7 +32,9 @@ public class BuilderController : MonoBehaviour
         {
             var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
 
-            itemBuilded.transform.rotation = Quaternion.LookRotation(Vector3.Cross(hit.normal, Vector3.up).normalized);
+            var direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
+
+            itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
         }
     }
 }
