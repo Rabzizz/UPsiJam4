@@ -744,6 +744,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CCTVCamera",
+            "id": "30eab6dd-7ef2-4938-a783-2f430def1b94",
+            "actions": [
+                {
+                    "name": "Orientation",
+                    "type": "Value",
+                    "id": "228b8dcb-f1f5-49ee-97de-d5493701c222",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "02824126-0da2-44c3-b70e-c12c6d5e46e7",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Orientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
