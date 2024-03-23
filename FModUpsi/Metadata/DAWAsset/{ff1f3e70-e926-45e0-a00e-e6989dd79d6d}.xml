@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{ff1f3e70-e926-45e0-a00e-e6989dd79d6d}">
+		<property name="assetPath">
+			<value>2024-03_UPsi_Project.rpp.link/SX_CtrlRoom_ENV_Displays_Glitch_05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.9654166666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{49dfe359-3152-4bcc-8e1f-7cbfe383cbec}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{98c80e35-1836-4e9b-8dc2-fca1c4da0140}</destination>
+		</relationship>
+	</object>
+</objects>
