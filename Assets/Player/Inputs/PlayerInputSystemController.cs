@@ -18,14 +18,20 @@ public class PlayerInputSystemController : MonoBehaviour
 
     // Components //
 
-    [SerializeField] private PlayerInput inputs;
+    private PlayerInput inputs;
 
     // Tools //
 
     private Dictionary<ActionMap, InputActionMap> actionMaps;
-    private ActionMap lastActionMap;
 
     // ---------- Mains ------------ //
+
+    public string actionMap;
+
+    private void Update()
+    {
+        actionMap = inputs.currentActionMap.name;
+    }
 
     private void Awake()
     {
@@ -35,13 +41,12 @@ public class PlayerInputSystemController : MonoBehaviour
         }
         else
         {
+            inputs = GetComponent<PlayerInput>();
             actionMaps = new Dictionary<ActionMap, InputActionMap>
             {
                 { ActionMap.Character, inputs.actions.actionMaps.Where(x => x.name.Contains("Player")).FirstOrDefault() },
                 { ActionMap.CCTVCamera, inputs.actions.actionMaps.Where(x => x.name.Contains("CCTV")).FirstOrDefault() }
             };
-
-            lastActionMap = ActionMap.Character;
 
             Instance = this;
         }

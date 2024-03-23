@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class CameraMovement : MonoBehaviour
 {
 
-    public InputActionReference InputLook;
-    public InputActionReference InputValidate;
+    public InputActionReference inputLook;
+    public InputActionReference inputValidate;
     public float mouseSensitivity = 50f;
 
     [SerializeField] private Camera setupCamera;
@@ -19,6 +20,7 @@ public class CameraMovement : MonoBehaviour
     private float xRotation = 0f;
     private float yRotation = 0f;
     private Camera mainCamera;
+    private bool isValidate = false;
 
     // Start
     void Start()
@@ -26,13 +28,13 @@ public class CameraMovement : MonoBehaviour
         GetComponents<Camera>().ToList().ForEach(c => c.enabled = false);
 
         mainCamera = Camera.main;
-        Camera.main.enabled = false;
+        mainCamera.enabled = false;
         setupCamera.enabled = true;
         
-        InputLook.action.performed += (ctx) => Look(ctx.ReadValue<Vector2>());
-        InputLook.action.canceled += (ctx) => moving = false;
+        inputLook.action.performed += (ctx) => Look(ctx.ReadValue<Vector2>());
+        inputLook.action.canceled += (ctx) => moving = false;
 
-        InputValidate.action.performed += (_) => Validate();
+        inputValidate.action.canceled += (_) => Validate();
 
         PlayerInputSystemController.Instance.SwitchToActionMap(ActionMap.CCTVCamera);
     }
@@ -40,7 +42,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moving)
+        if (moving && !isValidate)
         {
             float mouseX = -lookVector.x * mouseSensitivity * Time.deltaTime;
             float mouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
@@ -66,7 +68,7 @@ public class CameraMovement : MonoBehaviour
     {
         setupCamera.enabled = false;
         mainCamera.enabled = true;
+        isValidate = true;
         PlayerInputSystemController.Instance.SwitchToActionMap(ActionMap.Character);
-
     }
 }
