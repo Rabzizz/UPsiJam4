@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class MinimapManager : MonoBehaviour
 {
@@ -22,57 +23,57 @@ public class MinimapManager : MonoBehaviour
         transform.localScale = temp;
 
         // test
-        //Refresh();
-    }
-
-    private void Update()
-    {
         Refresh();
     }
 
     public void Refresh()
     {
+        // Clear
         foreach(GameObject element in elements)
         {
             Destroy(element);
         }
 
-        Vector3 origin = floorObject.transform.position;
-        Vector3 minimapOrigin = transform.position;
-
+        // Add all
         foreach(DoorController door in doors)
         {
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.localScale = Vector3.one * 0.1f;
-            sphere.GetComponent<Renderer>().material.color = Color.blue;
-            sphere.transform.parent = transform;
-
-            //sphere.transform.position = new Vector3(door.transform.position.x, door.transform.position.z, 0) / 50;
-            Vector3 delta = door.transform.position - origin;
-            delta /= 50;
-            sphere.transform.position = minimapOrigin + delta; // local + inverttransform
-
-            elements.Add(sphere);
+            SpawnElementOnMinimap(door.transform, Color.blue, true, door);
         }
 
         foreach(TrapController trap in traps)
         {
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.localScale = Vector3.one * 0.1f;
-            sphere.GetComponent<Renderer>().material.color = Color.red;
-            sphere.transform.parent = transform;
-
-            //sphere.transform.position = new Vector3(door.transform.position.x, door.transform.position.z, 0) / 50;
-            Vector3 delta = trap.transform.position - origin;
-            delta /= 50;
-            sphere.transform.position = minimapOrigin + delta;
-
-            elements.Add(sphere);
+            SpawnElementOnMinimap(trap.transform, Color.red, true, trap);
         }
 
         foreach(CameraMovement cctv in cctvs)
         {
-
+            SpawnElementOnMinimap(cctv.transform, Color.green, false);
         }
+    }
+
+    public void SpawnElementOnMinimap(Transform elementRefTransform, Color color, bool clickable, IActivable activable=null)
+    {
+        Vector3 origin = floorObject.transform.position;
+        Vector3 minimapOrigin = transform.position;
+
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.localScale = Vector3.one * 0.1f;
+        sphere.GetComponent<Renderer>().material.color = color;
+        sphere.transform.parent = transform;
+
+        Vector3 delta = elementRefTransform.transform.position - origin;
+        delta /= 50;
+        Vector3 localPos = transform.InverseTransformPoint(minimapOrigin + delta);
+        sphere.transform.localPosition = localPos;
+
+        // If clickable call event
+        if(clickable)
+        {
+            ClickableMinimapElement clickableElement = sphere.AddComponent<ClickableMinimapElement>();
+            clickableElement.OnClick += (s,e) => activable.Activate();
+        }
+
+        // Add for next clear
+        elements.Add(sphere);
     }
 }
