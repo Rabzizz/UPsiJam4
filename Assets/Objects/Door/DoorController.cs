@@ -14,8 +14,7 @@ public class DoorController : MonoBehaviour, IActivable
 
     void Start()
     {
-        open = true;
-        wasOpen = true;
+        wasOpen = !open;
     }
 
     void Update()

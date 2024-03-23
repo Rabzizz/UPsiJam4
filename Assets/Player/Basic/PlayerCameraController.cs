@@ -15,19 +15,21 @@ public class PlayerCameraController : MonoBehaviour
     private Vector2 lookVector;
     private float xRotation = 0f;
 
+    private bool moving;
+
     // Start
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         inputLook.action.performed += (ctx) => Look(ctx.ReadValue<Vector2>());
-        inputLook.action.canceled += (ctx) => Look(new Vector2());
+        inputLook.action.canceled += (ctx) => moving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (moving)
-        //{
+        if (moving)
+        {
             float mouseX = lookVector.x * mouseSensitivity * Time.deltaTime;
             float mouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
 
@@ -36,11 +38,12 @@ public class PlayerCameraController : MonoBehaviour
 
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerTransform.Rotate(Vector3.up * mouseX);
-        //}
+        }
     }
 
     public void Look(Vector2 valueXY)
     {
+        moving = true;
         lookVector = valueXY;
     }
 }
