@@ -23,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+    }
+
+    public void Move()
+    {
         Vector3 playerVelocity = new Vector3(inputMove.x * walkSpeed, rb.velocity.y, inputMove.y * walkSpeed);
         rb.velocity = transform.TransformDirection(playerVelocity);
     }

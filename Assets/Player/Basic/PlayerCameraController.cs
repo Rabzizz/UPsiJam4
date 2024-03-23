@@ -12,14 +12,13 @@ public class PlayerCameraController : MonoBehaviour
     public float mouseSensitivity = 50f;
     public Transform playerTransform;
 
-    private bool moving;
     private Vector2 lookVector;
     private float xRotation = 0f;
-    private float yRotation = 0f;
 
     // Start
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         inputLook.action.performed += (ctx) => Look(ctx.ReadValue<Vector2>());
         inputLook.action.canceled += (ctx) => Look(new Vector2());
     }
@@ -42,7 +41,6 @@ public class PlayerCameraController : MonoBehaviour
 
     public void Look(Vector2 valueXY)
     {
-        moving = true;
         lookVector = valueXY;
     }
 }
