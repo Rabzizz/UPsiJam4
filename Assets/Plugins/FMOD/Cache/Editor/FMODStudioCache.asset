@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8163129942353046305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Play_SX_CtrlRoom_AMB_Displays_ON
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Play_SX_CtrlRoom_AMB_Displays_ON
+  Guid:
+    Data1: -805560743
+    Data2: 1185774659
+    Data3: 611195266
+    Data4: 1357361444
+  Banks:
+  - {fileID: -2395612422503327461}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 58000
+--- !u!114 &-3485968116978567019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Play_SX_CtrlRoom_AMB_RoomTone
+  m_EditorClassIdentifier: 
+  Path: event:/AMB/Play_SX_CtrlRoom_AMB_RoomTone
+  Guid:
+    Data1: 362805776
+    Data2: 1139224286
+    Data3: 376537790
+    Data4: 377996154
+  Banks:
+  - {fileID: -2395612422503327461}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 58000
 --- !u!114 &-2395612422503327461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +69,10 @@ MonoBehaviour:
   Path: FModUpsi/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638467826311397899
+  lastModified: 638468078816200248
   FileSizes:
   - Name: Desktop
-    Value: 11776
+    Value: 2082144
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -36,13 +90,15 @@ MonoBehaviour:
   - {fileID: 4003400537534529653}
   - {fileID: -2395612422503327461}
   EditorEvents:
-  - {fileID: 8101094588915708009}
+  - {fileID: -3485968116978567019}
+  - {fileID: 5297986740223523011}
+  - {fileID: -8163129942353046305}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2395612422503327461}
   StringsBanks:
   - {fileID: 4003400537534529653}
-  cacheTime: 638467826311439273
+  cacheTime: 638468078816211952
   cacheVersion: 131617
 --- !u!114 &4003400537534529653
 MonoBehaviour:
@@ -59,12 +115,12 @@ MonoBehaviour:
   Path: FModUpsi/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638467826311439273
+  lastModified: 638468078816211952
   FileSizes:
   - Name: Desktop
-    Value: 754
+    Value: 882
   Exists: 1
---- !u!114 &8101094588915708009
+--- !u!114 &5297986740223523011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,20 +130,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Test
+  m_Name: event:/AMB/Play_SX_CtrlRoom_AMB_Displays_OFF
   m_EditorClassIdentifier: 
-  Path: event:/Test
+  Path: event:/AMB/Play_SX_CtrlRoom_AMB_Displays_OFF
   Guid:
-    Data1: -1975787850
-    Data2: 1214623725
-    Data3: -381104968
-    Data4: -1810073481
+    Data1: 493749302
+    Data2: 1197354138
+    Data3: 1077741730
+    Data4: -852960610
   Banks:
   - {fileID: -2395612422503327461}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1000
+  Length: 44000
