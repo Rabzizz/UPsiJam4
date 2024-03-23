@@ -27,12 +27,8 @@ public class BuilderController : MonoBehaviour
 
     public void Build()
     {
-        Instantiate(items[selectedItem], hit.point, Quaternion.Euler(-hit.normal));
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(hit.point, 0.1f);
+        var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
+        
+        itemBuilded.transform.rotation = Quaternion.LookRotation(Vector3.Cross(hit.normal, Vector3.up).normalized);
     }
 }

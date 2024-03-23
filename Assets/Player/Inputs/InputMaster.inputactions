@@ -757,6 +757,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Validate",
+                    "type": "Button",
+                    "id": "e2407d66-dead-4daa-8286-c71a7e7a0a8f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -768,6 +777,17 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Orientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75f152db-ac9e-4727-a0c8-48bbbebb7bfa",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Validate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
