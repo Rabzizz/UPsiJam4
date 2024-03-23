@@ -23,6 +23,9 @@ public class CameraMovement : MonoBehaviour
     private Camera mainCamera;
     private bool isValidate = false;
 
+
+    public MeshRenderer meshRender;
+    public Material material;
     // Start
     void Start()
     {
@@ -40,13 +43,17 @@ public class CameraMovement : MonoBehaviour
         inputLook.action.performed += (ctx) => Look(ctx.ReadValue<Vector2>());
         inputLook.action.canceled += (ctx) => moving = false;
 
-        inputValidate.action.canceled += (_) => Validate();
+        inputValidate.action.canceled += (_) => { if (!isValidate) Validate(); };
 
         PlayerInputSystemController.Instance.SwitchToActionMap(ActionMap.CCTVCamera);
     }
 
     private void OnDestroy()
     {
+        inputLook.action.performed -= (ctx) => Look(ctx.ReadValue<Vector2>());
+        inputLook.action.canceled -= (ctx) => moving = false;
+
+        inputValidate.action.canceled -= (_) => Validate();
         GameManager.Instance.ReTakeTarget(viewCamera);
     }
 

@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 82063d0300623274291c16ec45d5f807, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television
@@ -233,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 11761278d639ca04f80e6a325db4f490, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (1)
@@ -322,6 +330,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: e63b4c0677a355747a9fa1c1f2b71f3f, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (2)
@@ -396,6 +408,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 5999566899d8d8c4297c6a2924c24a82, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (3)
@@ -503,6 +519,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: d2f7095d5a068c845a3af85681233b3b, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (3)
@@ -577,6 +597,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 94167bad08d747640890840941e9536e, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (1)
@@ -1011,6 +1035,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 8aa77fd7c2759584c925c22633e1bdd7, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (2)
@@ -1209,6 +1237,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 3be529d883d00a84dbceccb0393d5e61, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (3)
@@ -1283,6 +1315,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: dee4618290cdf8a47a443699b6a1570f, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (1)
@@ -1462,6 +1498,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: e6f2c27986f7cde4c8211afa8849fd0b, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television (2)
@@ -1752,6 +1792,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cd9751ef1884c2e499b065b775c9c410, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television
@@ -1822,6 +1866,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7677049194555702226, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
+      propertyPath: layerMasksRemovable.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 8014494268554702505, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1865,8 +1913,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6950274051111103517, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1953943223}
   m_SourcePrefab: {fileID: 100100000, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
+--- !u!1 &1953943222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6950274051111103517, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
+  m_PrefabInstance: {fileID: 1953943221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1953943223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953943222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1001 &1956455394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1987,6 +2056,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 19fbc1e10cd8c294aa2104b4a246201c, type: 2}
+    - target: {fileID: 5874105729872069804, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
+      propertyPath: m_TagString
+      value: ScreenMeshRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 8577473811744999758, guid: a8c6c3c86d45f4347bef244201d23380, type: 3}
       propertyPath: m_Name
       value: television

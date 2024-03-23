@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4886280197603203595}
   - component: {fileID: 9179682114643558165}
   - component: {fileID: 3973697293770636883}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: cctv_base_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4447654050837312029}
   - component: {fileID: 2094081342590789235}
   - component: {fileID: 3822960260015701676}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: cctv_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +189,8 @@ MonoBehaviour:
   viewCamera: {fileID: 7387311090034035432}
   moving: 0
   lookVector: {x: 0, y: 0}
+  meshRender: {fileID: 0}
+  material: {fileID: 0}
 --- !u!1 &5974818609321663464
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +202,7 @@ GameObject:
   - component: {fileID: 3362740580867463672}
   - component: {fileID: 7387311090034035432}
   - component: {fileID: 604868562511689774}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +331,7 @@ GameObject:
   - component: {fileID: 2316942500947316188}
   - component: {fileID: 4558587189006383923}
   - component: {fileID: 5013744520350483920}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SetupCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6131271121114098561}
   - component: {fileID: 7858109516470903966}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
