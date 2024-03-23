@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWProject" id="{98c80e35-1836-4e9b-8dc2-fca1c4da0140}">
+		<property name="assetPath">
+			<value>2024-03_UPsi_Project.rpp.link/</value>
+		</property>
+		<property name="dawProjectPath">
+			<value>C:/Users/huegi/kDrive/5 - Audio design/2024-03_JAM_UPsi-4.0_Précision/2 - Sound design/21 - Reaper/2024-03_UPsi_Project.rpp</value>
+		</property>
+		<property name="renderedAssetsPath">
+			<value>../../3 - Implémentation/31 - Exports</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{49dfe359-3152-4bcc-8e1f-7cbfe383cbec}</destination>
+		</relationship>
+	</object>
+</objects>
