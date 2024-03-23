@@ -5,7 +5,7 @@
 			<value>Play_SX_CtrlRoom_AMB_Displays_GlitchBuildUp</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{8f4f83fe-ae3f-430b-8d7f-65b254946ce1}</destination>
@@ -116,6 +116,7 @@
 	<object class="MixerBusEffectChain" id="{dc3529f0-76b8-4a80-934d-4fc3c69ae965}">
 		<relationship name="effects">
 			<destination>{d404963b-2426-4977-a1e3-ac73c3405dc3}</destination>
+			<destination>{a0f1300c-b31f-4f6f-a915-12f6ee62063d}</destination>
 			<destination>{8e58c864-41e7-4f8f-af7b-f1419fb52809}</destination>
 		</relationship>
 	</object>
@@ -136,6 +137,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{1a45d8b4-84ec-406c-b1b1-0cf4a4278a1e}" />
 	<object class="MixerBusFader" id="{d404963b-2426-4977-a1e3-ac73c3405dc3}" />
+	<object class="SpatialiserEffect" id="{a0f1300c-b31f-4f6f-a915-12f6ee62063d}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="maximumDistance">
+			<value>25</value>
+		</property>
+	</object>
 	<object class="SFXReverbEffect" id="{8e58c864-41e7-4f8f-af7b-f1419fb52809}">
 		<property name="decayTime">
 			<value>210</value>

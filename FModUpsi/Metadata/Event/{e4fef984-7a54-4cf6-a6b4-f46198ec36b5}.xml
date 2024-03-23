@@ -5,7 +5,7 @@
 			<value>Play_SX_CtrlRoom_ENV_Displays_Glitch</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{8f4f83fe-ae3f-430b-8d7f-65b254946ce1}</destination>
@@ -170,6 +170,8 @@
 	<object class="MixerBusEffectChain" id="{626c4e7b-c8b7-4bad-a137-3559edfb2a40}">
 		<relationship name="effects">
 			<destination>{7bed766b-cc45-4d14-8955-4ffa5c684e10}</destination>
+			<destination>{878e46ea-5b82-4053-9954-20fae000d114}</destination>
+			<destination>{0a01ee11-f9a9-4d2c-95db-dbd61b0a355d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d7ad7472-0ccc-4b0a-849a-c9e5ab66b8c2}" />
@@ -195,4 +197,32 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{7bed766b-cc45-4d14-8955-4ffa5c684e10}" />
+	<object class="SpatialiserEffect" id="{878e46ea-5b82-4053-9954-20fae000d114}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="maximumDistance">
+			<value>25</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{0a01ee11-f9a9-4d2c-95db-dbd61b0a355d}">
+		<property name="decayTime">
+			<value>210</value>
+		</property>
+		<property name="diffusion">
+			<value>25</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-6.5</value>
+		</property>
+		<property name="highCut">
+			<value>3000</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>25</value>
+		</property>
+		<property name="wetLevel">
+			<value>-15.5</value>
+		</property>
+	</object>
 </objects>
