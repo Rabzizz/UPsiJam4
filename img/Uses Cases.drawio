@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2024-03-23T07:20:55.193Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="4biia2rdLz-LaKUwKw13" version="24.0.8" type="device">
+  <diagram name="Uses Cases" id="uhi5YNRp1p7kZF9Ndnp2">
+    <mxGraphModel dx="1114" dy="602" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-14" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="520" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-13" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="40" width="515" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-2" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="140" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-3" value="Mouvements&lt;br&gt;(3D, FPS)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="130" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-4" value="Poser Piège" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-5" value="Reprendre piège" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-6" value="Déclencher Piège" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="415" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-7" value="Voir minimap" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="415" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-8" value="Voir Camera" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="402.5" y="415" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-9" value="Poser Camera" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="130" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-10" value="Jour/Nuit" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxzapnlSJMdAbt0ayvSM-11" value="Pathfinding" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="380" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
