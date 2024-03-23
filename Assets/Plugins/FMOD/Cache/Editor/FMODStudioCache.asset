@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: FModUpsi/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638468078816200248
+  lastModified: 638468125467157009
   FileSizes:
   - Name: Desktop
-    Value: 2082144
+    Value: 2141952
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -93,12 +93,13 @@ MonoBehaviour:
   - {fileID: -3485968116978567019}
   - {fileID: 5297986740223523011}
   - {fileID: -8163129942353046305}
+  - {fileID: 7579214923840013566}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2395612422503327461}
   StringsBanks:
   - {fileID: 4003400537534529653}
-  cacheTime: 638468078816211952
+  cacheTime: 638468125467168101
   cacheVersion: 131617
 --- !u!114 &4003400537534529653
 MonoBehaviour:
@@ -115,10 +116,10 @@ MonoBehaviour:
   Path: FModUpsi/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638468078816211952
+  lastModified: 638468125467168101
   FileSizes:
   - Name: Desktop
-    Value: 882
+    Value: 964
   Exists: 1
 --- !u!114 &5297986740223523011
 MonoBehaviour:
@@ -147,4 +148,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 44000
-
+--- !u!114 &7579214923840013566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/Play_SX_CtrlRoom_ENV_Displays_Glitch
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/Play_SX_CtrlRoom_ENV_Displays_Glitch
+  Guid:
+    Data1: -453052028
+    Data2: 1291221588
+    Data3: 1643426982
+    Data4: -1254691688
+  Banks:
+  - {fileID: -2395612422503327461}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
