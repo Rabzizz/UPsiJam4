@@ -6,12 +6,6 @@ public class MinimapManager : MonoBehaviour
 {
     public MeshFilter floorObject;
 
-    //public List<IActivable> activables;
-
-    public List<DoorController> doors;
-    public List<TrapController> traps;
-    public List<CameraMovement> cctvs;
-
     public List<GameObject> elements;
 
     private void Start()
@@ -21,34 +15,21 @@ public class MinimapManager : MonoBehaviour
         Vector3 temp = bounds.size * 50;
         temp.y = 0.1f;
         transform.localScale = temp;
-
-        // test
-        Refresh();
     }
 
-    public void Refresh()
+    public void AddDoor(DoorController door)
     {
-        // Clear
-        foreach(GameObject element in elements)
-        {
-            Destroy(element);
-        }
+        SpawnElementOnMinimap(door.transform, Color.blue, true, door);
+    }
 
-        // Add all
-        foreach(DoorController door in doors)
-        {
-            SpawnElementOnMinimap(door.transform, Color.blue, true, door);
-        }
+    public void AddTrap(TrapController trap)
+    {
+        SpawnElementOnMinimap(trap.transform, Color.red, true, trap);
+    }
 
-        foreach(TrapController trap in traps)
-        {
-            SpawnElementOnMinimap(trap.transform, Color.red, true, trap);
-        }
-
-        foreach(CameraMovement cctv in cctvs)
-        {
-            SpawnElementOnMinimap(cctv.transform, Color.green, false);
-        }
+    public void AddCCTV(CameraMovement cctv)
+    {
+        SpawnElementOnMinimap(cctv.transform, Color.green, false);
     }
 
     public void SpawnElementOnMinimap(Transform elementRefTransform, Color color, bool clickable, IActivable activable=null)
@@ -75,5 +56,15 @@ public class MinimapManager : MonoBehaviour
 
         // Add for next clear
         elements.Add(sphere);
+    }
+
+    public void ClearMinimap()
+    {
+        foreach(GameObject element in elements)
+        {
+            Destroy(element);
+        }
+
+        elements.Clear();
     }
 }
