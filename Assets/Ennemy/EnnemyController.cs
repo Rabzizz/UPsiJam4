@@ -16,6 +16,7 @@ public class EnnemyController : MonoBehaviour
     Vector3 lastDestination;
     NavMeshPathStatus agentStatus;
 
+
     private void Update()
     {
         // For editor test

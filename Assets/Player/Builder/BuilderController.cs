@@ -37,4 +37,10 @@ public class BuilderController : MonoBehaviour
             itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
         }
     }
+
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(hit.point, 0.1f);
+    }
 }
