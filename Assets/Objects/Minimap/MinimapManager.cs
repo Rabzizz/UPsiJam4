@@ -19,7 +19,6 @@ public class MinimapManager : MonoBehaviour
             Instance = this;
         }
 
-        DontDestroyOnLoad(this);
     }
 
     void Start()

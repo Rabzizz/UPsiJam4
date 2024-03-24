@@ -428,6 +428,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7677049194555702226, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
+      propertyPath: buyManager
+      value: 
+      objectReference: {fileID: 585970091}
+    - target: {fileID: 7677049194555702226, guid: 80e378dfcde246741b2fa7a838239d95, type: 3}
       propertyPath: items.Array.data[1]
       value: 
       objectReference: {fileID: 2505932937998332824, guid: 16f1c5e33ef58aa4db59fd331aaa3354, type: 3}
@@ -969,6 +973,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d03d0b88d1275304cbb6aa5072b3f990, type: 3}
+--- !u!114 &585970091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5074327475666700261, guid: 472043668de6bdf43a95e0a512682b6f, type: 3}
+  m_PrefabInstance: {fileID: 1332841365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f882eab6f631f748b5c0f49d8b85e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &601628104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2778,7 +2793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8778513405018102900, guid: 718aa3b0f46f0b240835166e91c0610c, type: 3}
       propertyPath: dayDuration
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8778513405018102900, guid: 718aa3b0f46f0b240835166e91c0610c, type: 3}
       propertyPath: uIController
@@ -2786,7 +2801,7 @@ PrefabInstance:
       objectReference: {fileID: 508204}
     - target: {fileID: 8778513405018102900, guid: 718aa3b0f46f0b240835166e91c0610c, type: 3}
       propertyPath: nightDuration
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

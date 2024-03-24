@@ -50,6 +50,10 @@ public class BuilderController : MonoBehaviour
 
     public void Build()
     {
+        if(GameManager.Instance.gameState == GameState.Phase2)
+        {
+            return;
+        }
         if (canRemove)
         {
             Destroy(hitRemove.transform.gameObject);
@@ -67,9 +71,10 @@ public class BuilderController : MonoBehaviour
 
             if (canBuildTrap && items[selectedItem].TryGetComponent<TrapController>(out var _))
             {
-                var itemBuilded = Instantiate(items[selectedItem], hitTrap.point, Quaternion.identity);
-                Vector3 direction = Vector3.Cross(hitTrap.normal, Vector3.up).normalized;
-                itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+                var itemBuilded = Instantiate(items[selectedItem]);
+                itemBuilded.transform.position = hitTrap.point;
+                //Vector3 direction = Vector3.Cross(hitTrap.normal, Vector3.up).normalized;
+                //itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
                 buyManager.BuyTrap();
             }
         }

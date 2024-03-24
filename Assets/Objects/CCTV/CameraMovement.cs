@@ -100,6 +100,7 @@ public class CameraMovement : MonoBehaviour
         {
             meshRender.gameObject.GetComponent<ScreenShaderController>().ActivateGlitch(1f);
             LeanTween.delayedCall(3.47f, () => Destroy(transform.parent.gameObject));
+            MinimapManager.Instance.ViewEnemyOnMap();
         }
     }
 }

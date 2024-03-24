@@ -10,7 +10,10 @@ public class TrapController : MonoBehaviour, IActivable
         Debug.Log("Activate trap");
 
         if (ennemyIsInTrigger)
+        {
             ennemy.HitFromTrap();
+            MinimapManager.Instance.ViewEnemyOnMap();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

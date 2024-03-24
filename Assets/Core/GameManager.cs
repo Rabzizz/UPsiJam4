@@ -1,4 +1,5 @@
 
+using FMODUnity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameState gameState;
+    [SerializeField] public GameState gameState;
 
     public static GameManager Instance { get; private set; }
     public event Action<GameState> onGameStateChanged;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public DoorController doorControlleRoom;
 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -45,7 +47,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        DontDestroyOnLoad(this);
 
     }
 
@@ -67,8 +68,12 @@ public class GameManager : MonoBehaviour
             case GameState.Phase1:
                 FindObjectsByType<DoorController>(FindObjectsSortMode.None).ToList().ForEach(door =>
                 {
+                    if(door == doorControlleRoom)
+                    {
+                        return;
+                    }
                     door.SwitchDoor(true);
-                    door.doorSticker.SetActive(false);
+                    door.doorSticker?.SetActive(false);
                 });
 
                 doorControlleRoom.SwitchDoor(true);
@@ -80,12 +85,14 @@ public class GameManager : MonoBehaviour
                 doorControlleRoom.SwitchDoor(false);
                 enemy = Instantiate(enemyPrefab, enemySpawn.transform.position, Quaternion.identity);
                 enemy.GetComponent<EnnemyController>().follow = true;
+                MinimapManager.Instance.GetComponentInChildren<EnnemyPosition>().enemy = enemy.transform;
                 break;
             case GameState.Win:
                 SceneManager.LoadScene(2);
                 break;
             case GameState.GameOver:
                 SceneManager.LoadScene(1);
+                FindObjectsByType<StudioEventEmitter>(FindObjectsSortMode.None).ToList().ForEach(see => see.Stop());
                 break;
             default:
                 break;
