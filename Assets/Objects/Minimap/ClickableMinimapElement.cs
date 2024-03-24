@@ -8,6 +8,7 @@ public class ClickableMinimapElement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        doorController.GetComponent<DoorController>().Activate();
+        if(GameManager.Instance.gameState == GameState.Phase2)
+            doorController.GetComponent<DoorController>().Activate();
     }
 }
