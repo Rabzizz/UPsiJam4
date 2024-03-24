@@ -79,6 +79,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SelectCCTV",
+                    "type": "Button",
+                    "id": "b3d896f2-d8d4-4d13-b3b4-0451205955e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectTrap",
+                    "type": "Button",
+                    "id": "463c1c6d-471b-4412-82e6-95b722e554a0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectWtf",
+                    "type": "Button",
+                    "id": "eb6bd76d-d155-4744-81db-379970ba2e41",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -156,6 +183,39 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Orientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bc3eae3-4897-4dd5-b409-ecd8385594c2",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectCCTV",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6dd77388-3c8c-4228-9b84-b57d2a38f0ee",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectTrap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9f69fe0-421f-4b3a-8741-da4a3dd87dcb",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectWtf",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
