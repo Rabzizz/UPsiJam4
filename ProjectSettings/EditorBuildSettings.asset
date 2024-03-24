@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CameraSetup.unity
-    guid: baf03858dca6cea4cba0b319cc304c0e
+    path: Assets/Scenes/Main.unity
+    guid: 4cecb8e0ec9696948b0b196f71ac4ecf
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: abdb84d605d5f4f40b925b2afd1c0a5f
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: cfdd38727a2eafa47ba7282eee83ef6d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e3564c561bb74bd4988759ffb51c8f0d, type: 2}

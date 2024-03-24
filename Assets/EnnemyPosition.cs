@@ -21,6 +21,8 @@ public class EnnemyPosition : MonoBehaviour
     void Update()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform.localPosition;
+        if (enemy == null)
+            return;
         enemyPawn.transform.localPosition = new Vector3((enemy.x + xOffset) * factor, yPosition, enemy.z * factor);
     }
 

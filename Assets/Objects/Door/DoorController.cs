@@ -17,18 +17,14 @@ public class DoorController : MonoBehaviour, IActivable
     {
         if (doorSticker != null)
             doorSticker.SetActive(false);
-        wasOpen = !open;
+        if (open != wasOpen)
+        {
+            SwitchDoor(open);
+            doorSticker.SetActive(false);
+            wasOpen = open;
+        }
     }
 
-    void Update()
-    {
-        // For editor tests, avoid button in editor
-        // if (open != wasOpen)
-        // {
-        //     SwitchDoor(open);
-        //     wasOpen = open;
-        // }
-    }
     public void SwitchDoor(bool open)
     {
         this.open = !open;
