@@ -191,6 +191,7 @@ MonoBehaviour:
   lookVector: {x: 0, y: 0}
   meshRender: {fileID: 0}
   material: {fileID: 0}
+  hasBeenSeen: 0
 --- !u!1 &5974818609321663464
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 2317938401577621008}
   - component: {fileID: 4852898998673195917}
   - component: {fileID: 8092473394101212954}
+  - component: {fileID: 2307550747172265904}
+  - component: {fileID: 8025427562396461624}
   m_Layer: 0
   m_Name: Television_screen_01
   m_TagString: Untagged
@@ -193,6 +195,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35803488d2496444ae8bd0955aec9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OffSound: {fileID: 8025427562396461624}
+  GlitchSound: {fileID: 2307550747172265904}
+  m_Renderer: {fileID: 2317938401577621008}
+--- !u!114 &2307550747172265904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874105729872069804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 264208559
+      Data2: 1293433895
+      Data3: -2109565812
+      Data4: 568535151
+    Path: event:/ENV/Play_SX_CtrlRoom_AMB_Displays_GlitchBuildUp
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8025427562396461624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874105729872069804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 493749302
+      Data2: 1197354138
+      Data3: 1077741730
+      Data4: -852960610
+    Path: event:/AMB/Play_SX_CtrlRoom_AMB_Displays_OFF
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8577473811744999758
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +316,7 @@ MonoBehaviour:
     Path: event:/AMB/Play_SX_CtrlRoom_AMB_Displays_ON
   Event: 
   PlayEvent: 1
-  StopEvent: 2
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
