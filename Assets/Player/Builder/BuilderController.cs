@@ -27,6 +27,7 @@ public class BuilderController : MonoBehaviour
     void Start()
     {
         InputBuild.action.canceled += (_) => Build();
+        transform.parent.GetComponentInChildren<UIController>().OnElementSelected += (index) => selectedItem = (int)index;
     }
 
     private void FixedUpdate()

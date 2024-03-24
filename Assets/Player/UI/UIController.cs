@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class UIController : MonoBehaviour
 
     public List<Sprite> sprites = new List<Sprite>();
 
-    public UnityEvent<ItemTypes> OnElementSelected; //ugly but well...
+    public event Action<ItemTypes> OnElementSelected;
 
     private void Start()
     {
@@ -39,6 +40,6 @@ public class UIController : MonoBehaviour
 
     public void UpdateMoney(int money)
     {
-        MoneyLabel.text = money + "CHF";
+        MoneyLabel.text = "*" +money;
     }
 }
