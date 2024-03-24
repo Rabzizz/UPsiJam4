@@ -99,6 +99,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Activate: 1
+    - _ActivateInt: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Amount: 0.04
