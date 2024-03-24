@@ -59,15 +59,21 @@ public class BuyManager : MonoBehaviour
 
     // --------------- Buy Sell --------------- //
 
-    public void BuyCCTV()
+    public bool BuyCCTV()
     {
-        if (currentMoney - priceCCTV > 0)
+        if (currentMoney - priceCCTV >= 0)
+        {
             currentMoney -= priceCCTV;
+            OnMoneyUpdated?.Invoke(currentMoney);
+            return true;
+        }
         else
+        {
             Debug.Log("CCTV too expensive");
+            return false;
+        }
 
 
-        OnMoneyUpdated?.Invoke(currentMoney);
     }
 
     public void SellCCTV()
@@ -77,14 +83,20 @@ public class BuyManager : MonoBehaviour
         OnMoneyUpdated?.Invoke(currentMoney);
     }
 
-    public void BuyTrap()
+    public bool BuyTrap()
     {
-        if (currentMoney - priceTrap > 0)
-            currentMoney -= priceTrap;
-        else
-            Debug.Log("Trap too expensive");
 
-        OnMoneyUpdated?.Invoke(currentMoney);
+        if (currentMoney - priceTrap >= 0)
+        {
+            currentMoney -= priceTrap;
+            OnMoneyUpdated?.Invoke(currentMoney);
+            return true;
+        }
+        else
+        {
+            Debug.Log("CCTV too expensive");
+            return false;
+        }
     }
 
     public void SellTrap()

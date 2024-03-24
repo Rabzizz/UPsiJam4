@@ -30,7 +30,7 @@ public class MinimapManager : MonoBehaviour
     public void ViewEnemyOnMap()
     {
         SetEnemyBip(true);
-        LeanTween.delayedCall(3f, x => SetEnemyBip(false));
+        LeanTween.delayedCall(5f, x => SetEnemyBip(false));
     }
 
     private void SetEnemyBip(bool state)
