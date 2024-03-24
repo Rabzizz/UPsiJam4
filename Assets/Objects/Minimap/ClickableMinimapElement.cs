@@ -4,9 +4,10 @@ using UnityEngine;
 public class ClickableMinimapElement : MonoBehaviour
 {
     public event EventHandler OnClick;
+    public GameObject doorController;
 
     private void OnMouseDown()
     {
-        OnClick?.Invoke(this, EventArgs.Empty);
+        doorController.GetComponent<DoorController>().Activate();
     }
 }
