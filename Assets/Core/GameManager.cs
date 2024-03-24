@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public Camera controlledRoomCamera;
     public GameObject playerSpawn;
 
+    public DoorController doorControlleRoom;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -50,6 +52,8 @@ public class GameManager : MonoBehaviour
         screensMeshRenderer = GameObject.FindGameObjectsWithTag("ScreenMeshRenderer")
             .Select(go => go.GetComponent<MeshRenderer>())
             .ToList();
+
+        player.transform.position = playerSpawn.transform.position;
     }
 
     public void ChangeGameState(GameState gameState)
@@ -60,12 +64,14 @@ public class GameManager : MonoBehaviour
             case GameState.Phase1:
                 controlledRoomCamera.gameObject.SetActive(true);
                 player.SetActive(false);
+                doorControlleRoom.SwitchDoor(true);
                 Destroy(enemy);
                 break;
             case GameState.Phase2:
                 controlledRoomCamera.gameObject.SetActive(true);
                 player.transform.position = playerSpawn.transform.position;
                 player.SetActive(false);
+                doorControlleRoom.SwitchDoor(false);
                 enemy = Instantiate(enemyPrefab);
                 enemy.GetComponent<EnnemyController>().follow = true;
                 break;

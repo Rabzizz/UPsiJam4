@@ -75,7 +75,7 @@ public class EnnemyController : MonoBehaviour
         agent.isStopped = true;
         Debug.Log("Ennemy has no more path");
     }
-
+        
     // ------------- Traps and other ------------- //
 
     public void HitFromTrap()
