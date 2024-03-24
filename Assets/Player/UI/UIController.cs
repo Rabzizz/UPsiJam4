@@ -22,6 +22,10 @@ public class UIController : MonoBehaviour
 
     public event Action<ItemTypes> OnElementSelected;
 
+    public TextMeshProUGUI timerLabel;
+    public TextMeshProUGUI daysLabel;
+    
+
     private void Start()
     {
         inputSelectCCTV.action.started += (e) => SelectElement(ItemTypes.CCTV); // TODO enum
@@ -41,5 +45,17 @@ public class UIController : MonoBehaviour
     public void UpdateMoney(int money)
     {
         MoneyLabel.text = "*" +money;
+    }
+
+    public void UpdateDays(int days)
+    {
+        daysLabel.text = "Days" + days;
+    }
+
+    public void UpdateTimer(float timeInSecond)
+    {
+        var minutes = (int)timeInSecond/60;
+        var seconds = ((timeInSecond / 60) - (int)minutes)*60;
+        timerLabel.text = $"{minutes}:seconds";
     }
 }
