@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyelashmat
-    second: {fileID: 2100000, guid: ef5488d77d279544e916d98ba0201d83, type: 2}
+    second: {fileID: 2100000, guid: edfd44f8f21bfbf4f895cf0f0891cdfd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

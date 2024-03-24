@@ -29,8 +29,7 @@ public class DoorController : MonoBehaviour, IActivable
         //     wasOpen = open;
         // }
     }
-
-    void SwitchDoor(bool open)
+    public void SwitchDoor(bool open)
     {
         this.open = !open;
 

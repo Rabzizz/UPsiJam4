@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,9 +25,13 @@ public class BuilderController : MonoBehaviour
     RaycastHit hitTrap;
     bool canRemove;
 
+
+    public BuyManager buyManager;
+
     void Start()
     {
         InputBuild.action.canceled += (_) => Build();
+        transform.parent.GetComponentInChildren<UIController>().OnElementSelected += (index) => selectedItem = (int)index;
     }
 
     private void FixedUpdate()
@@ -52,16 +57,20 @@ public class BuilderController : MonoBehaviour
         }
         else
         {
-            if (canBuildCCTV)
+            if (canBuildCCTV && items[selectedItem].GetComponentInChildren<CameraMovement>())
             {
                 var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
                 Vector3 direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
                 itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+                buyManager.BuyCCTV();
             }
 
-            if (canBuildTrap)
+            if (canBuildTrap && items[selectedItem].TryGetComponent<TrapController>(out var _))
             {
                 var itemBuilded = Instantiate(items[selectedItem], hitTrap.point, Quaternion.identity);
+                Vector3 direction = Vector3.Cross(hitTrap.normal, Vector3.up).normalized;
+                itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+                buyManager.BuyTrap();
             }
         }
     }

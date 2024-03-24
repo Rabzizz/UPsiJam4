@@ -16,9 +16,12 @@ public class EnnemyController : MonoBehaviour
     [SerializeField]
     private List<CameraMovement> cctvCameras = new List<CameraMovement>();
 
+    public float delayStunt = 5f;
+
     // -- Tools -- //
     Vector3 lastDestination;
     NavMeshPathStatus agentStatus;
+    bool stunt;
 
     private void Start()
     {
@@ -64,8 +67,8 @@ public class EnnemyController : MonoBehaviour
     // Carful, also stop destination
     void StopDestination()
     {
-        //agent.destination = transform.position;
-        //agent.isStopped = true;
+        agent.destination = transform.position;
+        agent.isStopped = true;
 
         // On peut faire + ici si jamais
     }
@@ -75,11 +78,20 @@ public class EnnemyController : MonoBehaviour
         agent.isStopped = true;
         Debug.Log("Ennemy has no more path");
     }
-
+        
     // ------------- Traps and other ------------- //
 
     public void HitFromTrap()
     {
-        Debug.Log("Ennemy is hit");
+        StopAgent();
+        stunt = true;
+
+        LeanTween.delayedCall(delayStunt, () => ReleaseFromTrap());
+    }
+
+    public void ReleaseFromTrap()
+    {
+        stunt = false;
+        agent.isStopped = false;
     }
 }

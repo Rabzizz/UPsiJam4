@@ -16,6 +16,8 @@ public class TrapController : MonoBehaviour, IActivable
     private void OnTriggerEnter(Collider other)
     {
         ennemyIsInTrigger = other.gameObject.TryGetComponent(out ennemy);
+        Activate();
+        Destroy(gameObject);
     }
 
     private void OnTriggerExit(Collider other)

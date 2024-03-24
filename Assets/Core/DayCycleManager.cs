@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class DayCycleManager : MonoBehaviour
 {
@@ -13,12 +14,15 @@ public class DayCycleManager : MonoBehaviour
     public float nightTimer;
     public int numberOfDaySurvived = 0;
 
+    public UIController uIController;
 
     void Start()
     {
         GameManager.Instance.onGameStateChanged += OnGameStateChanged;
         dayTimer = dayDuration;
         nightTimer = nightDuration;
+        uIController.UpdateDays(numberOfDaySurvived);
+        uIController.UpdateTimer(dayTimer);
     }
 
     void Update()
@@ -26,6 +30,7 @@ public class DayCycleManager : MonoBehaviour
         if (dayTimerRunning)
         {
             dayTimer -= Time.deltaTime;
+            uIController.UpdateTimer(dayTimer);
         }
 
         if (dayTimer < 0)
@@ -38,6 +43,7 @@ public class DayCycleManager : MonoBehaviour
         if (nightTimerRunning)
         {
             nightTimer -= Time.deltaTime;
+            uIController.UpdateTimer(nightTimer);
         }
 
         if (nightTimer < 0)
@@ -54,14 +60,18 @@ public class DayCycleManager : MonoBehaviour
         {
             case GameState.Phase1:
                 dayTimer = dayDuration;
+                uIController.UpdateTimer(dayTimer);
                 if (++numberOfDaySurvived > dayToWin)
                 {
                     GameManager.Instance.ChangeGameState(GameState.Win);
                 }
-                
+                uIController.UpdateDays(numberOfDaySurvived);
+
+
                 break;
             case GameState.Phase2:
                 nightTimer = nightDuration;
+                uIController.UpdateTimer(nightTimer);
                 nightTimerRunning = true;
                 break;
             default:
