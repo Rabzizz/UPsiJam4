@@ -11,6 +11,7 @@ public class GameOverScreenScript : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
     }
+
     public void Quit()
     {
         Application.Quit();
@@ -18,6 +19,6 @@ public class GameOverScreenScript : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
