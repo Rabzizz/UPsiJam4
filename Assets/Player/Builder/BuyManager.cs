@@ -18,11 +18,18 @@ public class BuyManager : MonoBehaviour
 
     ItemTypes selectedItem = ItemTypes.CCTV;
 
+    public BuilderController builder;
+
     private void Start()
     {
         inputBuild.action.canceled += (e) => BuyItem();
 
         ResetMoney();
+    }
+
+    public void Update()
+    {
+        selectedItem = (ItemTypes) builder.selectedItem;
     }
 
     public void ResetMoney()

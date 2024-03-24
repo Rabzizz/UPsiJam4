@@ -8,14 +8,7 @@ public class MinimapManager : MonoBehaviour
 
     public List<GameObject> elements;
 
-    private void Start()
-    {
-        Bounds bounds = floorObject.sharedMesh.bounds;
-
-        Vector3 temp = bounds.size * 50;
-        temp.y = 0.1f;
-        transform.localScale = temp;
-    }
+    public GameObject doorSymbol;
 
     public void AddDoor(DoorController door)
     {
@@ -56,6 +49,11 @@ public class MinimapManager : MonoBehaviour
 
         // Add for next clear
         elements.Add(sphere);
+    }
+
+    public void SpawnElementOnMiniMap(Transform transform)
+    {
+
     }
 
     public void ClearMinimap()

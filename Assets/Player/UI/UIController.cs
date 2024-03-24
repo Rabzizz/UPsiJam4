@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,7 +20,11 @@ public class UIController : MonoBehaviour
 
     public List<Sprite> sprites = new List<Sprite>();
 
-    public UnityEvent<ItemTypes> OnElementSelected; //ugly but well...
+    public event Action<ItemTypes> OnElementSelected;
+
+    public TextMeshProUGUI timerLabel;
+    public TextMeshProUGUI daysLabel;
+    
 
     private void Start()
     {
@@ -39,6 +44,18 @@ public class UIController : MonoBehaviour
 
     public void UpdateMoney(int money)
     {
-        MoneyLabel.text = money + "CHF";
+        MoneyLabel.text = "*" +money;
+    }
+
+    public void UpdateDays(int days)
+    {
+        daysLabel.text = "Days" + days;
+    }
+
+    public void UpdateTimer(float timeInSecond)
+    {
+        var minutes = (int)timeInSecond/60;
+        var seconds = ((timeInSecond / 60) - (int)minutes)*60;
+        timerLabel.text = $"{minutes}:seconds";
     }
 }
