@@ -9,16 +9,19 @@ public class BuilderController : MonoBehaviour
 {
 
     public InputActionReference InputBuild;
-    public LayerMask layerMasks;
+    public LayerMask layerMaskCCTV;
+    public LayerMask layerMaskTrap;
     public float maxDistance;
     public List<GameObject> items;
     public int selectedItem = 0;
 
     RaycastHit hit;
-    bool canBuild;
+    bool canBuildCCTV;
+    bool canBuildTrap;
 
     public LayerMask layerMasksRemovable;
     RaycastHit hitRemove;
+    RaycastHit hitTrap;
     bool canRemove;
 
     void Start()
@@ -28,9 +31,14 @@ public class BuilderController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        canBuild = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, layerMasks);
+        canBuildCCTV = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, layerMaskCCTV);
         canRemove = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitRemove, maxDistance, layerMasksRemovable);
+        canBuildTrap = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitTrap, maxDistance, layerMaskTrap);
 
+        if (canBuildCCTV)
+            Debug.Log("Can cctv");
+        if (canBuildTrap)
+            Debug.Log("Can trap");
         if (canRemove)
             Debug.Log("Can Remove");
     }
@@ -42,14 +50,19 @@ public class BuilderController : MonoBehaviour
             Destroy(hitRemove.transform.gameObject);
             return;
         }
-
-        if (canBuild)
+        else
         {
-            var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
+            if (canBuildCCTV)
+            {
+                var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
+                Vector3 direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
+                itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+            }
 
-            var direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
-
-            itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+            if (canBuildTrap)
+            {
+                var itemBuilded = Instantiate(items[selectedItem], hitTrap.point, Quaternion.identity);
+            }
         }
     }
 
