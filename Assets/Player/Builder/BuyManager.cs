@@ -16,7 +16,7 @@ public class BuyManager : MonoBehaviour
 
     public UnityEvent<int> OnMoneyUpdated;
 
-    int selectedItem;
+    ItemTypes selectedItem = ItemTypes.CCTV;
 
     private void Start()
     {
@@ -34,19 +34,19 @@ public class BuyManager : MonoBehaviour
 
     // --------------- Select Item --------------- //
 
-    public void SelectItem(int index)
+    public void SelectItem(ItemTypes selectedItem)
     {
-        selectedItem = index;
+        this.selectedItem = selectedItem;
     }
 
     public void BuyItem()
     {
         switch(selectedItem)
         {
-            case 1:
+            case ItemTypes.CCTV:
                 BuyCCTV();
                 break;
-            case 2:
+            case ItemTypes.Trap:
                 BuyTrap();
                 break;
         }

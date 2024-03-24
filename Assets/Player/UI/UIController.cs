@@ -19,21 +19,21 @@ public class UIController : MonoBehaviour
 
     public List<Sprite> sprites = new List<Sprite>();
 
-    public UnityEvent<int> OnElementSelected; //ugly but well...
+    public UnityEvent<ItemTypes> OnElementSelected; //ugly but well...
 
     private void Start()
     {
-        inputSelectCCTV.action.started += (e) => SelectElement(1); // TODO enum
-        inputSelectTrap.action.started += (e) => SelectElement(2);
+        inputSelectCCTV.action.started += (e) => SelectElement(ItemTypes.CCTV); // TODO enum
+        inputSelectTrap.action.started += (e) => SelectElement(ItemTypes.Trap);
     }
 
-    public void SelectElement(int index)
+    public void SelectElement(ItemTypes selectedItem)
     {
-        if (sprites.Count > index - 1)
+        if (sprites.Count > (int)selectedItem)
         {
-            toolbar.sprite = sprites[index - 1];
+            toolbar.sprite = sprites[(int)selectedItem];
 
-            OnElementSelected.Invoke(index);
+            OnElementSelected.Invoke(selectedItem);
         }
     }
 
