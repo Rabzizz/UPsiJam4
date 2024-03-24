@@ -9,12 +9,17 @@ public class EnnemyController : MonoBehaviour
 
     [Header("Inputs")]
     [SerializeField]
-    public Transform target;
+    private Transform target;
     public bool follow;
 
     // -- Tools -- //
     Vector3 lastDestination;
     NavMeshPathStatus agentStatus;
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Update()
     {
@@ -31,6 +36,8 @@ public class EnnemyController : MonoBehaviour
             StopDestination();
         }
     }
+
+    // ------------- Navigation ------------- //
 
     public void SetDestinationToReach(Vector3 position)
     {
@@ -50,5 +57,13 @@ public class EnnemyController : MonoBehaviour
     public void StopAgent()
     {
         agent.isStopped = true;
+        Debug.Log("Ennemy has no more path");
+    }
+
+    // ------------- Traps and other ------------- //
+
+    public void HitFromTrap()
+    {
+        Debug.Log("Ennemy is hit");
     }
 }
