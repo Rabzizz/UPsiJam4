@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private Vector2 inputMove;
+
+    [SerializeField] private StudioEventEmitter fmodEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -30,19 +33,18 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 playerVelocity = new Vector3(inputMove.x * walkSpeed, rb.velocity.y, inputMove.y * walkSpeed);
         rb.velocity = transform.TransformDirection(playerVelocity);
+        if (inputMove.magnitude > 0)
+        {
+            if (!fmodEvent.IsPlaying()) fmodEvent.Play();
+        }
+        else
+        {
+            fmodEvent.Stop();
+        }
     }
 
     public void Move(Vector2 inputMove)
     {
         this.inputMove = inputMove;
-    }
-
-    public void Click()
-    {
-        Debug.Log("click");
-    }
-    public void Enter()
-    {
-        Debug.Log("Enter");
     }
 }

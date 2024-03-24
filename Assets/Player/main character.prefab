@@ -45,16 +45,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputBuild: {fileID: -4708992462987004403, guid: 9091f189a73817644bfe750b094d337f, type: 3}
-  layerMasks:
+  layerMaskCCTV:
     serializedVersion: 2
     m_Bits: 64
-  maxDistance: 2
+  layerMaskTrap:
+    serializedVersion: 2
+    m_Bits: 256
+  maxDistance: 5
   items:
   - {fileID: 6799720982692868411, guid: d6df2fbd35b22934294df089e6fc6317, type: 3}
+  - {fileID: 312635624509982211, guid: 0a3632fac61b3db4ebf58948f0c35af1, type: 3}
   selectedItem: 0
   layerMasksRemovable:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1 &6950274051111103517
 GameObject:
   m_ObjectHideFlags: 0
