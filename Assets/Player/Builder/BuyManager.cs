@@ -22,8 +22,6 @@ public class BuyManager : MonoBehaviour
 
     private void Start()
     {
-        inputBuild.action.canceled += (e) => BuyItem();
-
         ResetMoney();
     }
 
