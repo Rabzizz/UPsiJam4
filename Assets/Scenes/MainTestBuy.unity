@@ -1197,27 +1197,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 941305606262852963, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 941305606262852963, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 941305606262852963, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 941305606262852963, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 932
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 941305606262852963, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 728
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 941305606262852963, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 364
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2144676120415913227, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: OnElementSelected.m_PersistentCalls.m_Calls.Array.size
@@ -1289,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778112826707539727, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -146.9
+      value: -146.90002
       objectReference: {fileID: 0}
     - target: {fileID: 7778112826707539727, guid: 6f81bf156eac48a499f160147da20678, type: 3}
       propertyPath: m_AnchoredPosition.y
