@@ -28,7 +28,7 @@ public class DoorController : MonoBehaviour, IActivable
     }
 
 
-    void SwitchDoor(bool open)
+    public void SwitchDoor(bool open)
     {
         this.open = open;
 
