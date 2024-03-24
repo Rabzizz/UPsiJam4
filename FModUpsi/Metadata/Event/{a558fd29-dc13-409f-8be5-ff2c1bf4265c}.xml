@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{94255a9d-c45e-45a1-a3ba-aa46d5ccf483}">
 		<property name="volume">
-			<value>-11.5</value>
+			<value>3</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{f2ec793e-bca6-4d94-9b03-8a302e83aed8}</destination>
@@ -103,6 +103,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{e59c2827-c78c-4c4d-becb-72c5c87f07fd}" />
 	<object class="MultiSound" id="{a07d4be2-0892-428e-9887-abc6ef169d78}">
+		<relationship name="modulators">
+			<destination>{2665bdd5-3d98-473a-ad20-8f1d8f1c3ec0}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{606b0363-5d4e-4717-ad88-21325534b18b}</destination>
 			<destination>{03eab36a-ecf3-4b4e-bcc4-1879d0cc8997}</destination>
@@ -112,22 +115,39 @@
 	</object>
 	<object class="MixerBusFader" id="{82213af2-938f-4682-93f3-7e581eb663cf}" />
 	<object class="MixerBusFader" id="{b41b5c5b-2af4-44a1-ba51-87ebba99f116}" />
+	<object class="RandomizerModulator" id="{2665bdd5-3d98-473a-ad20-8f1d8f1c3ec0}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>1.04166675</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{606b0363-5d4e-4717-ad88-21325534b18b}">
 		<relationship name="audioFile">
 			<destination>{67f7d3a8-2d9c-4b3c-945e-59893e804174}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{03eab36a-ecf3-4b4e-bcc4-1879d0cc8997}">
+		<property name="pitch">
+			<value>1.39999998</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{c9473dc1-8b1d-4e3a-8fd6-c0cfd9d96096}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{5fd44d29-c388-4169-852d-26b13b78f0f8}">
+		<property name="pitch">
+			<value>-0.800000012</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{a7092c40-c55f-4c75-888d-519457393e60}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{cca438d2-d53d-4c99-b390-fc76b30cff42}">
+		<property name="pitch">
+			<value>3.20000005</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{3f0c3c7d-2399-4698-9b54-d393b40195e5}</destination>
 		</relationship>
