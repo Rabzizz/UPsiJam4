@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
             camera.targetTexture = screenTexture[0];
             screenMaterials[0].mainTexture = screenTexture[0];
             screensMeshRenderer[0].sharedMaterial = screenMaterials[0];
+            screensMeshRenderer[0].sharedMaterial.color = new Color(0, 0, 0, 0);
 
 
             var cameraMovement = camera.transform.parent.gameObject.GetComponent<CameraMovement>();

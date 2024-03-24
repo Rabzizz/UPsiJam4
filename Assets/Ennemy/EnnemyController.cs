@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +13,8 @@ public class EnnemyController : MonoBehaviour
     [SerializeField]
     private Transform target;
     public bool follow;
+    [SerializeField]
+    private List<CameraMovement> cctvCameras = new List<CameraMovement>();
 
     // -- Tools -- //
     Vector3 lastDestination;
@@ -23,6 +27,18 @@ public class EnnemyController : MonoBehaviour
 
     private void Update()
     {
+        foreach(var cctvCam in FindObjectsByType<CameraMovement>(FindObjectsSortMode.None))
+        {
+            Physics.Raycast(transform.position, (cctvCam.transform.position - transform.position).normalized, out var hit, Mathf.Infinity);
+            if (hit.transform.gameObject.GetComponentInChildren<CameraMovement>())
+            {
+                cctvCam.MonsterInView();
+                cctvCam.hasBeenSeen = true;
+            }
+            Debug.DrawRay(transform.position, (cctvCam.transform.position - transform.position).normalized * 1000, Color.red);
+        };
+
+
         // For editor test
         if (follow && lastDestination != target.position)
         {
@@ -48,8 +64,8 @@ public class EnnemyController : MonoBehaviour
     // Carful, also stop destination
     void StopDestination()
     {
-        agent.destination = transform.position;
-        agent.isStopped = true;
+        //agent.destination = transform.position;
+        //agent.isStopped = true;
 
         // On peut faire + ici si jamais
     }
