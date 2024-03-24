@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1737,7 +1737,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1922457293}
         m_TargetAssemblyTypeName: GameOverScreenScript, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2647,6 +2647,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3810448733587886993, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/MUSIQUE/MX_TitleMenu_AMB_Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810448733587886993, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 2076435953
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810448733587886993, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1283931936
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810448733587886993, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: -1281658973
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810448733587886993, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 855433033
+      objectReference: {fileID: 0}
     - target: {fileID: 7408799692972979277, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2702,7 +2722,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7408799692972979277, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
     - {fileID: 4239626885995135417, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
-    m_RemovedGameObjects: []
+    - {fileID: 8816137321439759793, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+    - {fileID: 191212184164469501, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 2627244294243049727, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
+    - {fileID: 8342961576202388558, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5761410455646739998, guid: 125b9dc1d54b7df40b4ee93119d95d90, type: 3}
       insertIndex: -1

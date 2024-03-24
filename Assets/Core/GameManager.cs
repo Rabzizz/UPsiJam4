@@ -88,10 +88,11 @@ public class GameManager : MonoBehaviour
                 MinimapManager.Instance.GetComponentInChildren<EnnemyPosition>().enemy = enemy.transform;
                 break;
             case GameState.Win:
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
+                FindObjectsByType<StudioEventEmitter>(FindObjectsSortMode.None).ToList().ForEach(see => see.Stop());
                 break;
             case GameState.GameOver:
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 FindObjectsByType<StudioEventEmitter>(FindObjectsSortMode.None).ToList().ForEach(see => see.Stop());
                 break;
             default:
