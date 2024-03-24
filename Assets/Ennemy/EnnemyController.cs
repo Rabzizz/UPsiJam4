@@ -16,9 +16,12 @@ public class EnnemyController : MonoBehaviour
     [SerializeField]
     private List<CameraMovement> cctvCameras = new List<CameraMovement>();
 
+    public float delayStunt = 5f;
+
     // -- Tools -- //
     Vector3 lastDestination;
     NavMeshPathStatus agentStatus;
+    bool stunt;
 
     private void Start()
     {
@@ -80,6 +83,15 @@ public class EnnemyController : MonoBehaviour
 
     public void HitFromTrap()
     {
-        Debug.Log("Ennemy is hit");
+        StopAgent();
+        stunt = true;
+
+        LeanTween.delayedCall(delayStunt, () => ReleaseFromTrap());
+    }
+
+    public void ReleaseFromTrap()
+    {
+        stunt = false;
+        agent.isStopped = false;
     }
 }
