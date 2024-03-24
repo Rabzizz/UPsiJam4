@@ -116,7 +116,6 @@
 		<property name="length">
 			<value>44</value>
 		</property>
-		<property name="name" />
 		<relationship name="sounds">
 			<destination>{533e0f7f-7cff-420f-968d-28ce33d0a315}</destination>
 			<destination>{e4396078-13ac-4d91-ab29-da0a36bfdde3}</destination>
@@ -152,7 +151,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{f47c6047-22b8-423f-9e9f-82558ee3f51a}">
 		<property name="volume">
-			<value>-3.5</value>
+			<value>-7</value>
 		</property>
 		<property name="name">
 			<value>Shutdown</value>
@@ -181,6 +180,9 @@
 		</property>
 		<property name="initialValue">
 			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>0</value>
 		</property>
 		<property name="releaseTime">
 			<value>4000</value>
