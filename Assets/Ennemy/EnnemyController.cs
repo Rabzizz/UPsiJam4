@@ -64,8 +64,8 @@ public class EnnemyController : MonoBehaviour
     // Carful, also stop destination
     void StopDestination()
     {
-        //agent.destination = transform.position;
-        //agent.isStopped = true;
+        agent.destination = transform.position;
+        agent.isStopped = true;
 
         // On peut faire + ici si jamais
     }

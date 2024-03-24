@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     public List<RenderTexture> screenTexture;
     public Material screenBaseMat;
 
+    public GameObject player;
+    public Camera controlledRoomCamera;
+    public GameObject playerSpawn;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -54,9 +58,14 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case GameState.Phase1:
+                controlledRoomCamera.gameObject.SetActive(true);
+                player.SetActive(false);
                 Destroy(enemy);
                 break;
             case GameState.Phase2:
+                controlledRoomCamera.gameObject.SetActive(true);
+                player.transform.position = playerSpawn.transform.position;
+                player.SetActive(false);
                 enemy = Instantiate(enemyPrefab);
                 enemy.GetComponent<EnnemyController>().follow = true;
                 break;
