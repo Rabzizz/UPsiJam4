@@ -54,8 +54,8 @@ public class UIController : MonoBehaviour
 
     public void UpdateTimer(float timeInSecond)
     {
-        var minutes = (int)timeInSecond/60;
-        var seconds = ((timeInSecond / 60) - (int)minutes)*60;
-        timerLabel.text = $"{minutes}:seconds";
+        int minutes = (int)timeInSecond/60;
+        int seconds = (int)(((timeInSecond / 60) - (int)minutes)*60);
+        timerLabel.text = $"{minutes}:{seconds}";
     }
 }
