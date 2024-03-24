@@ -86,11 +86,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f1e7aaf2-b49f-4b7b-bbe5-9f5a5762e5d5}">
-		<property name="volume">
-			<value>-10</value>
-		</property>
 		<relationship name="modulators">
 			<destination>{27263f00-7819-4ced-a331-c51ee49024cd}</destination>
+			<destination>{027ec1b4-07ad-485d-9e5a-40c417ff178b}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{3b3f471f-d271-4ed8-bf4f-42c0f80991e4}</destination>
@@ -118,6 +116,7 @@
 		<property name="length">
 			<value>44</value>
 		</property>
+		<property name="name" />
 		<relationship name="sounds">
 			<destination>{533e0f7f-7cff-420f-968d-28ce33d0a315}</destination>
 			<destination>{e4396078-13ac-4d91-ab29-da0a36bfdde3}</destination>
@@ -126,7 +125,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{390e36c2-30e3-4a70-a0ef-ff55d6423157}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-11.5</value>
 		</property>
 		<property name="name">
 			<value>Loop</value>
@@ -174,6 +173,20 @@
 		</property>
 		<property name="amount">
 			<value>0.625</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{027ec1b4-07ad-485d-9e5a-40c417ff178b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="releaseTime">
+			<value>4000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{3b3f471f-d271-4ed8-bf4f-42c0f80991e4}">
