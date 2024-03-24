@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ public class CameraMovement : MonoBehaviour
 
     public MeshRenderer meshRender;
     public Material material;
+    public bool hasBeenSeen;
     // Start
     void Start()
     {
@@ -50,6 +52,8 @@ public class CameraMovement : MonoBehaviour
 
     private void OnDestroy()
     {
+
+        meshRender.gameObject.GetComponent<ScreenShaderController>().ActivateGlitch(0f);
         inputLook.action.performed -= (ctx) => Look(ctx.ReadValue<Vector2>());
         inputLook.action.canceled -= (ctx) => moving = false;
 
@@ -88,5 +92,14 @@ public class CameraMovement : MonoBehaviour
         mainCamera.enabled = true;
         isValidate = true;
         PlayerInputSystemController.Instance.SwitchToActionMap(ActionMap.Character);
+    }
+
+    public void MonsterInView()
+    {
+        if(!hasBeenSeen)
+        {
+            meshRender.gameObject.GetComponent<ScreenShaderController>().ActivateGlitch(1f);
+            LeanTween.delayedCall(3.47f, () => Destroy(transform.parent.gameObject));
+        }
     }
 }
