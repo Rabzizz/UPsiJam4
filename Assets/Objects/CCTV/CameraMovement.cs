@@ -67,7 +67,7 @@ public class CameraMovement : MonoBehaviour
         if (moving && !isValidate)
         {
             float mouseX = -lookVector.x * mouseSensitivity * Time.deltaTime;
-            float mouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
+            float mouseY = -lookVector.y * mouseSensitivity * Time.deltaTime;
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -100,6 +100,7 @@ public class CameraMovement : MonoBehaviour
         {
             meshRender.gameObject.GetComponent<ScreenShaderController>().ActivateGlitch(1f);
             LeanTween.delayedCall(3.47f, () => Destroy(transform.parent.gameObject));
+            MinimapManager.Instance.ViewEnemyOnMap();
         }
     }
 }

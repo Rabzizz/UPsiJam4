@@ -1,8 +1,10 @@
 
+using FMODUnity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -14,7 +16,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameState gameState;
+    [SerializeField] public GameState gameState;
 
     public static GameManager Instance { get; private set; }
     public event Action<GameState> onGameStateChanged;
@@ -29,8 +31,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public Camera controlledRoomCamera;
     public GameObject playerSpawn;
+    public GameObject enemySpawn;
 
     public DoorController doorControlleRoom;
+
 
     private void Awake()
     {
@@ -43,7 +47,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        DontDestroyOnLoad(this);
 
     }
 
@@ -54,6 +57,7 @@ public class GameManager : MonoBehaviour
             .ToList();
 
         player.transform.position = playerSpawn.transform.position;
+        ChangeGameState(GameState.Phase1);
     }
 
     public void ChangeGameState(GameState gameState)
@@ -62,18 +66,34 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case GameState.Phase1:
-                controlledRoomCamera.gameObject.SetActive(true);
-                player.SetActive(false);
+                FindObjectsByType<DoorController>(FindObjectsSortMode.None).ToList().ForEach(door =>
+                {
+                    if(door == doorControlleRoom)
+                    {
+                        return;
+                    }
+                    door.SwitchDoor(true);
+                    door.doorSticker?.SetActive(false);
+                });
+
                 doorControlleRoom.SwitchDoor(true);
+
                 Destroy(enemy);
                 break;
             case GameState.Phase2:
-                controlledRoomCamera.gameObject.SetActive(true);
                 player.transform.position = playerSpawn.transform.position;
-                player.SetActive(false);
                 doorControlleRoom.SwitchDoor(false);
-                enemy = Instantiate(enemyPrefab);
+                enemy = Instantiate(enemyPrefab, enemySpawn.transform.position, Quaternion.identity);
                 enemy.GetComponent<EnnemyController>().follow = true;
+                MinimapManager.Instance.GetComponentInChildren<EnnemyPosition>().enemy = enemy.transform;
+                break;
+            case GameState.Win:
+                SceneManager.LoadScene(3);
+                FindObjectsByType<StudioEventEmitter>(FindObjectsSortMode.None).ToList().ForEach(see => see.Stop());
+                break;
+            case GameState.GameOver:
+                SceneManager.LoadScene(2);
+                FindObjectsByType<StudioEventEmitter>(FindObjectsSortMode.None).ToList().ForEach(see => see.Stop());
                 break;
             default:
                 break;
@@ -88,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     public bool SetCCTVTarget(Camera camera)
     {
-        if(screenTexture.Count > 0)
+        if (screenTexture.Count > 0)
         {
             camera.targetTexture = screenTexture[0];
             screenMaterials[0].mainTexture = screenTexture[0];

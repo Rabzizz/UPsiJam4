@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnnemyPosition : MonoBehaviour
 {
-    Vector3 enemy;
+    public Transform enemy;
 
     public GameObject enemyPawn;
 
@@ -11,17 +11,13 @@ public class EnnemyPosition : MonoBehaviour
     private const int xOffset = 19;
     private const float factor = 0.0165f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform.localPosition;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform.localPosition;
-        enemyPawn.transform.localPosition = new Vector3((enemy.x + xOffset) * factor, yPosition, enemy.z * factor);
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        if (enemy == null)
+            return;
+        enemyPawn.transform.localPosition = new Vector3((enemy.localPosition.x + xOffset) * factor, yPosition, enemy.localPosition.z * factor);
     }
 
 

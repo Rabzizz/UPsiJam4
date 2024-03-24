@@ -30,6 +30,7 @@ public class UIController : MonoBehaviour
     {
         inputSelectCCTV.action.started += (e) => SelectElement(ItemTypes.CCTV); // TODO enum
         inputSelectTrap.action.started += (e) => SelectElement(ItemTypes.Trap);
+        GameManager.Instance.gameObject.GetComponent<BuyManager>().OnMoneyUpdated.AddListener(UpdateMoney);
     }
 
     public void SelectElement(ItemTypes selectedItem)

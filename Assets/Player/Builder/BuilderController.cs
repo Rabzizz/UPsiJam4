@@ -50,6 +50,10 @@ public class BuilderController : MonoBehaviour
 
     public void Build()
     {
+        if (GameManager.Instance.gameState == GameState.Phase2)
+        {
+            return;
+        }
         if (canRemove)
         {
             Destroy(hitRemove.transform.gameObject);
@@ -59,18 +63,23 @@ public class BuilderController : MonoBehaviour
         {
             if (canBuildCCTV && items[selectedItem].GetComponentInChildren<CameraMovement>())
             {
-                var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
-                Vector3 direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
-                itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
-                buyManager.BuyCCTV();
+                if (buyManager.BuyCCTV())
+                {
+                    var itemBuilded = Instantiate(items[selectedItem], hit.point, Quaternion.identity);
+                    Vector3 direction = Vector3.Cross(hit.normal, Vector3.up).normalized;
+                    itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+                }
             }
 
             if (canBuildTrap && items[selectedItem].TryGetComponent<TrapController>(out var _))
             {
-                var itemBuilded = Instantiate(items[selectedItem], hitTrap.point, Quaternion.identity);
-                Vector3 direction = Vector3.Cross(hitTrap.normal, Vector3.up).normalized;
-                itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
-                buyManager.BuyTrap();
+                if (buyManager.BuyTrap())
+                {
+                    var itemBuilded = Instantiate(items[selectedItem]);
+                    itemBuilded.transform.position = hitTrap.point;
+                    //Vector3 direction = Vector3.Cross(hitTrap.normal, Vector3.up).normalized;
+                    //itemBuilded.transform.rotation = Quaternion.LookRotation(direction);
+                }
             }
         }
     }

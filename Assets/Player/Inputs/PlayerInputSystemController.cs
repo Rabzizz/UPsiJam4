@@ -51,7 +51,6 @@ public class PlayerInputSystemController : MonoBehaviour
             Instance = this;
         }
 
-        DontDestroyOnLoad(this);
 
     }
 

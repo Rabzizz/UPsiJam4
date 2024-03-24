@@ -16,7 +16,7 @@ public class EnnemyController : MonoBehaviour
     [SerializeField]
     private List<CameraMovement> cctvCameras = new List<CameraMovement>();
 
-    public float delayStunt = 5f;
+    public float delayStunt = 10f;
 
     // -- Tools -- //
     Vector3 lastDestination;
