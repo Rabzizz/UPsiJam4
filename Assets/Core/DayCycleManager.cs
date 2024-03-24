@@ -21,6 +21,8 @@ public class DayCycleManager : MonoBehaviour
         GameManager.Instance.onGameStateChanged += OnGameStateChanged;
         dayTimer = dayDuration;
         nightTimer = nightDuration;
+        uIController.UpdateDays(numberOfDaySurvived);
+        uIController.UpdateTimer(dayTimer);
     }
 
     void Update()
@@ -63,7 +65,9 @@ public class DayCycleManager : MonoBehaviour
                 {
                     GameManager.Instance.ChangeGameState(GameState.Win);
                 }
-                
+                uIController.UpdateDays(numberOfDaySurvived);
+
+
                 break;
             case GameState.Phase2:
                 nightTimer = nightDuration;
